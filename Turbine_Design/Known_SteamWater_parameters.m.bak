@@ -1,0 +1,33 @@
+function [h_num,h_name,t_fw,d_pd,pc,d_order,rh_order,prh,h_style,hsg,asg,aother,h_cooler,dt_out,dt_in,fwp_outp,cwp_outp,h_Dp,fwp_ts,cwp_ts,eff_h,afw]=Known_SteamWater_parameters
+%******************************************************
+%计算汽水参数所需参数(50MW)
+%回热级数h_num;加热器名称h_name;给水温度(℃)t_fw;%除氧器工作压力(MPa)d_pd;
+%凝汽器压力(MPa)pc;抽汽压力(MPa)h_p;抽汽温度(℃)/干度h_t;除氧器编号d_order;
+%再热对应抽汽口rh_order;高压缸排汽压力(MPa)prh; aother其它离开汽机（不加热给水）蒸汽份额(%)
+%加热器疏水类型（0:表面逐级自流、1:表面疏水泵、
+%2：混合）h_style;
+%其它汽水流入焓值(kJ/kg):hsg;
+%其它汽水流入份额(%)asg;有无疏水冷却器h_cooler;
+%出口端差(℃)dt_out;入口端差(℃);dt_in;
+%给水泵压头(MPa);fwp_outp;
+%凝结水泵压头(MPa)cwp_outp;
+%抽汽压损(%)h_Dp;给水泵温升(℃)fwp_ts;
+%凝结水泵温升(℃)cwp_ts;
+%加热器效率eff_h;%给水份额afw;
+% ****作者：王雷 zrqwl2003@126.com***
+%******************************************************
+h_num=7;
+h_name=[{'#1'} {'#2'} {'#3'} {'#4'} {'#5'} {'#6'} {'#7'} {'#8'}];
+t_fw=217;d_pd=0.588;
+pc=0.0046;d_order=3;rh_order=2;
+prh=3.622;h_style=[0 0 2 0 0 0 1];
+hsg=[3195 3065 2985 2810 2688 2565 2440];
+asg=[0.056794 0.0522170 0.852673 0.04142 0.039358 0.036234 0.0315915];
+%此处如何计算
+aother=0.0384;
+h_cooler=[1 1 0 0 0 0 0];
+dt_out=[10 10 0 0 0 0 0];
+dt_in=[5 5 0 5 5 5 5];
+fwp_outp=13.73;cwp_outp=1.33;
+h_Dp=[0.08 0.08 0.4 0.08 0.08 0.08 0.08] ;
+fwp_ts=3.4;cwp_ts=1;eff_h=0.98;afw=1;
